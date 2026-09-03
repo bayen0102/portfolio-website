@@ -1,149 +1,158 @@
 # Personal Portfolio Website
 
-A personal portfolio website built to showcase my software engineering projects, technical skills, education, and experience.
+A personal portfolio website built with Flask to showcase my background, education, technical skills, professional experience, and software engineering projects.
 
-This website serves as a central place to learn more about my background in Computer Science and Informatics, explore the projects I have worked on, and view my technical experience.
+Live Website: [View My Portfolio](https://mywebsite-lac-three.vercel.app)
 
-## 🌐 Live Website
+## About the Project
 
-[View My Portfolio](https://mywebsite-lac-three.vercel.app)
+This portfolio provides a centralized place to learn more about my background in Computer Science and Informatics and explore the projects and technical experience I have developed throughout my academic journey.
 
-##Features
+The website uses Flask for backend routing and HTML, CSS, and JavaScript for the frontend. It is deployed on Vercel and includes dedicated pages for my education, experience, skills, background, projects, and resume.
+
+## Features
 
 - Personal introduction and background
+- Education history
+- Professional experience
+- Technical skills
 - Software engineering project showcase
-- Technical skills overview
-- Education and experience
-- Responsive web design
-- Multiple-page navigation
-- Flask-based backend
-- Deployed online with Vercel
+- Downloadable resume
+- Multi-page Flask routing
+- Responsive frontend interface
+- Live deployment with Vercel
 
-##Tech Stack
+## Tech Stack
 
-### Backend
+**Backend**
 - Python
 - Flask
 
-### Frontend
+**Frontend**
 - HTML
 - CSS
 - JavaScript
 
-### Deployment
+**Deployment & Tools**
 - Vercel
-
-### Other
-- JSON
 - Git
 - GitHub
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 mywebsite/
 ├── static/
-│   ├── css/
-│   ├── js/
-│   └── images/
+│   ├── icons/
+│   ├── images/
+│   ├── script.js
+│   ├── style.css
+│   └── Bay_En_Wang_Resume_CS-2.pdf
 │
 ├── templates/
+│   ├── background.html
+│   ├── base.html
+│   ├── education.html
+│   ├── experience.html
 │   ├── index.html
+│   ├── login.html
+│   ├── profile.html
 │   ├── projects.html
-│   └── ...
+│   └── skills.html
 │
 ├── app.py
 ├── requirements.txt
 ├── users.json
-└── .gitignore
+├── .gitignore
+└── README.md
 ```
 
-## Running the Project Locally
+## Application Routes
+
+| Route | Description |
+|---|---|
+| `/` | Home page |
+| `/experience` | Professional experience |
+| `/education` | Education background |
+| `/skills` | Technical skills |
+| `/background` | Personal and academic background |
+| `/projects` | Software engineering projects |
+| `/resume` | Downloadable resume |
+
+## Running Locally
 
 ### 1. Clone the repository
 
 ```bash
 git clone https://github.com/bayen0102/mywebsite.git
-```
-
-### 2. Navigate to the project directory
-
-```bash
 cd mywebsite
 ```
 
-### 3. Create a virtual environment
+### 2. Create a virtual environment
 
 ```bash
 python3 -m venv venv
 ```
 
-### 4. Activate the virtual environment
+### 3. Activate the virtual environment
 
-On macOS/Linux:
+macOS/Linux:
 
 ```bash
 source venv/bin/activate
 ```
 
-On Windows:
+Windows:
 
 ```bash
 venv\Scripts\activate
 ```
 
-### 5. Install dependencies
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 6. Run the application
+### 5. Run the Flask application
 
 ```bash
 python app.py
 ```
 
-Open the local URL displayed in the terminal to view the website.
-
-## About This Project
-
-I built this portfolio website to create a centralized platform for presenting my software engineering projects, technical skills, education, and professional experience.
-
-Instead of relying only on a traditional resume, the website allows visitors to explore my work in a more interactive format. Building the portfolio also gave me hands-on experience with Flask application development, frontend development, project organization, version control, and web deployment.
+Then open the local address displayed in the terminal.
 
 ## What I Learned
 
-Through this project, I gained practical experience with:
+Building this portfolio gave me practical experience with:
 
-- Building a web application using Flask
-- Connecting Python backend routes with HTML templates
-- Structuring static assets such as CSS, JavaScript, and images
-- Creating responsive web interfaces
-- Organizing a web application into reusable components
-- Managing source code with Git and GitHub
-- Deploying and maintaining a live web application
+- Developing a web application with Flask
+- Creating and managing backend routes
+- Connecting Flask routes with HTML templates
+- Structuring reusable HTML templates
+- Building frontend interfaces with HTML, CSS, and JavaScript
+- Managing static assets and project resources
+- Using Git and GitHub for version control
+- Deploying a Python web application online
 
 ## Future Improvements
 
-Potential improvements include:
-
-- Improving mobile responsiveness
-- Adding additional project case studies
-- Improving accessibility
-- Optimizing website performance
-- Adding interactive project demonstrations
-- Expanding the portfolio as I complete new software engineering projects
+- Improve mobile responsiveness
+- Expand individual project case studies
+- Improve accessibility
+- Optimize frontend performance
+- Add more interactive project demonstrations
+- Continue updating the portfolio with new projects and experience
 
 ## Author
 
 **Bay Wang**
 
-B.S. in Computer Science, University of California, Santa Cruz  
-M.S. in Informatics, San José State University
+B.S. Computer Science  
+University of California, Santa Cruz
+
+M.S. Informatics  
+San José State University
 
 GitHub: [bayen0102](https://github.com/bayen0102)
 
----
-
-If you are interested in my work, feel free to explore my repositories and projects.
