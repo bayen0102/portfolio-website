@@ -1,50 +1,900 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 id="projects" class="page-title" style="margin-top: 80px;">Projects</h1>
 
-<div class="project-section">
+<!-- ==========================================
+     PROJECT HERO
+     ========================================== -->
 
-    <!-- Project 1 -->
-    <div class="project-card">
-        <h3 class="project-title">
+<section class="project-hero">
+
+    <div class="project-hero-content">
+
+        <p class="project-eyebrow">
+            REAL-TIME DISTRIBUTED SYSTEM
+        </p>
+
+        <h1 class="project-main-title">
+            Real-Time Hybrid<br>
+            Peer-to-Peer Messaging System
+        </h1>
+
+        <p class="project-description">
+            A production-style distributed messaging backend combining
+            TCP/P2P networking with FastAPI, PostgreSQL, Redis,
+            Docker, automated testing, and CI/CD.
+        </p>
+
+        <div class="project-actions">
+
+            <a
+                href="https://github.com/bayen0102/real-time-hybrid-peer-messaging-system"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-primary-btn"
+            >
+                View GitHub
+                <i class="fab fa-github"></i>
+            </a>
+
+            <a
+                href="#architecture"
+                class="project-secondary-btn"
+            >
+                Explore Architecture ↓
+            </a>
+
+        </div>
+
+
+        <div class="tech-stack">
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>PostgreSQL</span>
+            <span>Redis</span>
+            <span>Docker</span>
+            <span>pytest</span>
+            <span>GitHub Actions</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     ARCHITECTURE
+     ========================================== -->
+
+<section
+    id="architecture"
+    class="project-content-section reveal"
+>
+
+    <p class="section-label">
+        SYSTEM DESIGN
+    </p>
+
+    <h2>
+        Architecture
+    </h2>
+
+    <p class="section-description">
+        The system combines centralized coordination with direct
+        peer-to-peer communication and dedicated services for
+        persistence, presence tracking, and analytics.
+    </p>
+
+
+    <div class="architecture">
+
+        <!-- Clients -->
+
+        <div class="architecture-row">
+
+            <div class="architecture-node">
+
+                <i class="fas fa-user"></i>
+
+                <strong>
+                    Client A
+                </strong>
+
+                <span>
+                    TCP Client
+                </span>
+
+            </div>
+
+
+            <div class="connection">
+
+                <span>
+                    P2P Message
+                </span>
+
+                <div class="connection-line"></div>
+
+            </div>
+
+
+            <div class="architecture-node">
+
+                <i class="fas fa-user"></i>
+
+                <strong>
+                    Client B
+                </strong>
+
+                <span>
+                    TCP Client
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="architecture-arrow">
+            ↓
+        </div>
+
+
+        <!-- TCP Server -->
+
+        <div class="architecture-node server-node">
+
+            <i class="fas fa-server"></i>
+
+            <strong>
+                TCP Server
+            </strong>
+
+            <span>
+                Registration · Bridge · Coordination
+            </span>
+
+        </div>
+
+
+        <div class="architecture-arrow">
+            ↓
+        </div>
+
+
+        <!-- Backend Services -->
+
+        <div class="service-grid">
+
+            <div class="architecture-node">
+
+                <i class="fas fa-code"></i>
+
+                <strong>
+                    FastAPI
+                </strong>
+
+                <span>
+                    REST API & Analytics
+                </span>
+
+            </div>
+
+
+            <div class="architecture-node">
+
+                <i class="fas fa-database"></i>
+
+                <strong>
+                    PostgreSQL
+                </strong>
+
+                <span>
+                    Message Persistence
+                </span>
+
+            </div>
+
+
+            <div class="architecture-node">
+
+                <i class="fas fa-bolt"></i>
+
+                <strong>
+                    Redis
+                </strong>
+
+                <span>
+                    Presence Tracking
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     WHAT I BUILT
+     ========================================== -->
+
+<section class="project-content-section reveal">
+
+    <p class="section-label">
+        IMPLEMENTATION
+    </p>
+
+    <h2>
+        What I Built
+    </h2>
+
+
+    <div class="feature-grid">
+
+        <!-- Feature 01 -->
+
+        <div class="feature-card">
+
+            <div class="feature-number">
+                01
+            </div>
+
             <i class="fas fa-network-wired"></i>
-            Real-Time Communication & Data Pipeline System
-        </h3>
 
-        <span class="project-date">Project | 2026</span>
+            <h3>
+                Real-Time Communication
+            </h3>
 
-        <ul class="project-list">
-            <li>Built a real-time communication system using TCP sockets with client-server and peer-to-peer architecture</li>
-            <li>Designed a data pipeline (Python, SQLite) to collect, store, and process user interaction data</li>
-            <li>Implemented ETL workflows to transform raw event data into structured, queryable datasets</li>
-            <li>Developed SQL queries (JOIN, aggregation) to analyze user behavior and generate insights</li>
-            <li>Processed real-time data streams using concurrent I/O (select()) to ensure efficient data handling</li>
-        </ul>
+            <p>
+                Built TCP socket-based client-server coordination
+                with persistent peer-to-peer connections for
+                real-time messaging.
+            </p>
 
-        <a href="https://github.com/YOUR-REPO-1" target="_blank" class="project-btn">
-            View Code
-        </a>
-    </div>
+        </div>
 
-    <!-- Project 2 -->
-    <div class="project-card">
-        <h3 class="project-title">
+
+        <!-- Feature 02 -->
+
+        <div class="feature-card">
+
+            <div class="feature-number">
+                02
+            </div>
+
+            <i class="fas fa-bolt"></i>
+
+            <h3>
+                Presence Tracking
+            </h3>
+
+            <p>
+                Integrated Redis to maintain fast, transient
+                online-user state independently from persistent data.
+            </p>
+
+        </div>
+
+
+        <!-- Feature 03 -->
+
+        <div class="feature-card">
+
+            <div class="feature-number">
+                03
+            </div>
+
             <i class="fas fa-database"></i>
-            SQL Data Analysis Project
-        </h3>
 
-        <span class="project-date">Project | 2026</span>
+            <h3>
+                Data Persistence
+            </h3>
 
-        <ul class="project-list">
-            <li>Queried and transformed structured datasets using SQL</li>
-            <li>Applied filtering, aggregation, and grouping techniques to extract meaningful insights</li>
-            <li>Analyzed data to support data-driven decision making</li>
-        </ul>
+            <p>
+                Used PostgreSQL to persist message history and
+                support structured queries and analytics.
+            </p>
 
-        <a href="https://github.com/YOUR-REPO-2" target="_blank" class="project-btn">
-            View Code
-        </a>
+        </div>
+
+
+        <!-- Feature 04 -->
+
+        <div class="feature-card">
+
+            <div class="feature-number">
+                04
+            </div>
+
+            <i class="fas fa-gears"></i>
+
+            <h3>
+                Infrastructure & CI
+            </h3>
+
+            <p>
+                Containerized services with Docker Compose and
+                automated backend testing using pytest and
+                GitHub Actions.
+            </p>
+
+        </div>
+
     </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     ENGINEERING DECISIONS
+     ========================================== -->
+
+<section class="project-content-section reveal">
+
+    <p class="section-label">
+        ENGINEERING
+    </p>
+
+    <h2>
+        Engineering Decisions
+    </h2>
+
+
+    <div class="decision-list">
+
+        <!-- Decision 01 -->
+
+        <div class="decision-item">
+
+            <span>
+                01
+            </span>
+
+            <div>
+
+                <h3>
+                    PostgreSQL for Persistent Messaging
+                </h3>
+
+                <p>
+                    Message history requires durable storage that
+                    survives application restarts. PostgreSQL provides
+                    persistent and queryable message data.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Decision 02 -->
+
+        <div class="decision-item">
+
+            <span>
+                02
+            </span>
+
+            <div>
+
+                <h3>
+                    Redis for Real-Time Presence
+                </h3>
+
+                <p>
+                    Online status changes frequently and requires
+                    fast access. Redis separates temporary presence
+                    state from persistent message storage.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Decision 03 -->
+
+        <div class="decision-item">
+
+            <span>
+                03
+            </span>
+
+            <div>
+
+                <h3>
+                    Docker for Reproducible Infrastructure
+                </h3>
+
+                <p>
+                    Docker Compose orchestrates the application,
+                    PostgreSQL, and Redis services in a consistent
+                    development environment.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Decision 04 -->
+
+        <div class="decision-item">
+
+            <span>
+                04
+            </span>
+
+            <div>
+
+                <h3>
+                    Automated CI Testing
+                </h3>
+
+                <p>
+                    GitHub Actions runs pytest automatically to
+                    detect regressions whenever changes are pushed
+                    to the repository.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     SYSTEM IN ACTION
+     ========================================== -->
+
+<section class="project-content-section reveal">
+
+    <p class="section-label">
+        LIVE SYSTEM
+    </p>
+
+    <h2>
+        System in Action
+    </h2>
+
+    <p class="section-description">
+        See the system running across real-time messaging,
+        persistent storage, analytics, and continuous integration.
+    </p>
+
+
+    <div class="demo-grid">
+
+
+        <!-- Screenshot 01 -->
+
+        <div class="demo-card">
+
+            <div class="demo-image-wrapper">
+
+                <img
+                    src="{{ url_for('static', filename='images/projects/messaging/chat-demo.png') }}"
+                    alt="Real-time peer-to-peer messaging demo"
+                    class="demo-image"
+                >
+
+                <div class="demo-overlay">
+
+                    <span>
+                        <i class="fas fa-expand"></i>
+                        View
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="demo-info">
+
+                <span class="demo-number">
+                    01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Real-Time Messaging
+                    </h3>
+
+                    <p>
+                        Two clients exchange messages through
+                        the hybrid TCP and peer-to-peer
+                        communication system.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Screenshot 02 -->
+
+        <div class="demo-card">
+
+            <div class="demo-image-wrapper">
+
+                <img
+                    src="{{ url_for('static', filename='images/projects/messaging/database-table.png') }}"
+                    alt="PostgreSQL message persistence"
+                    class="demo-image"
+                >
+
+                <div class="demo-overlay">
+
+                    <span>
+                        <i class="fas fa-expand"></i>
+                        View
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="demo-info">
+
+                <span class="demo-number">
+                    02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Message Persistence
+                    </h3>
+
+                    <p>
+                        PostgreSQL stores message records for
+                        durable history and structured querying.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Screenshot 03 -->
+
+        <div class="demo-card">
+
+            <div class="demo-image-wrapper">
+
+                <img
+                    src="{{ url_for('static', filename='images/projects/messaging/analytics-query.png') }}"
+                    alt="SQL message analytics"
+                    class="demo-image"
+                >
+
+                <div class="demo-overlay">
+
+                    <span>
+                        <i class="fas fa-expand"></i>
+                        View
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="demo-info">
+
+                <span class="demo-number">
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Message Analytics
+                    </h3>
+
+                    <p>
+                        SQL queries transform persisted message
+                        data into measurable communication metrics.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Screenshot 04 -->
+
+        <div class="demo-card">
+
+            <div class="demo-image-wrapper">
+
+                <img
+                    src="{{ url_for('static', filename='images/projects/messaging/CI-success.png') }}"
+                    alt="GitHub Actions CI pipeline"
+                    class="demo-image"
+                >
+
+                <div class="demo-overlay">
+
+                    <span>
+                        <i class="fas fa-expand"></i>
+                        View
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="demo-info">
+
+                <span class="demo-number">
+                    04
+                </span>
+
+                <div>
+
+                    <h3>
+                        Continuous Integration
+                    </h3>
+
+                    <p>
+                        GitHub Actions automatically runs the
+                        backend test suite to validate code changes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     FINAL CTA
+     ========================================== -->
+
+<section class="project-content-section project-final reveal">
+
+    <p class="section-label">
+        SOURCE CODE
+    </p>
+
+    <h2>
+        Explore the Implementation
+    </h2>
+
+    <p class="section-description">
+        View the complete architecture, source code, tests,
+        documentation, and deployment configuration.
+    </p>
+
+    <a
+        href="https://github.com/bayen0102/real-time-hybrid-peer-messaging-system"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="project-primary-btn"
+    >
+        View Project on GitHub
+        <i class="fab fa-github"></i>
+    </a>
+
+</section>
+
+
+
+<!-- ==========================================
+     IMAGE MODAL
+     ========================================== -->
+
+<div
+    id="imageModal"
+    class="image-modal"
+>
+
+    <button
+        id="modalClose"
+        class="modal-close"
+        aria-label="Close image"
+    >
+        ×
+    </button>
+
+    <img
+        id="modalImage"
+        class="modal-image"
+        src=""
+        alt=""
+    >
+
+    <p
+        id="modalCaption"
+        class="modal-caption"
+    ></p>
 
 </div>
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+     ========================================== -->
+
+<script>
+
+    /* Scroll Reveal */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+        new IntersectionObserver(
+
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target
+                            .classList
+                            .add("active");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.15
+            }
+
+        );
+
+
+    revealElements.forEach((element) => {
+
+        revealObserver.observe(element);
+
+    });
+
+
+
+    /* Screenshot Modal */
+
+    const modal =
+        document.getElementById("imageModal");
+
+    const modalImage =
+        document.getElementById("modalImage");
+
+    const modalCaption =
+        document.getElementById("modalCaption");
+
+    const modalClose =
+        document.getElementById("modalClose");
+
+    const demoImages =
+        document.querySelectorAll(
+            ".demo-image-wrapper"
+        );
+
+
+    demoImages.forEach((wrapper) => {
+
+        wrapper.addEventListener(
+            "click",
+            () => {
+
+                const image =
+                    wrapper.querySelector(
+                        ".demo-image"
+                    );
+
+                modalImage.src =
+                    image.src;
+
+                modalImage.alt =
+                    image.alt;
+
+                modalCaption.textContent =
+                    image.alt;
+
+                modal.classList.add(
+                    "active"
+                );
+
+                document.body.style.overflow =
+                    "hidden";
+
+            }
+        );
+
+    });
+
+
+
+    function closeModal() {
+
+        modal.classList.remove(
+            "active"
+        );
+
+        document.body.style.overflow =
+            "";
+
+    }
+
+
+
+    modalClose.addEventListener(
+        "click",
+        closeModal
+    );
+
+
+
+    modal.addEventListener(
+        "click",
+        (event) => {
+
+            if (event.target === modal) {
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "Escape" &&
+                modal.classList.contains("active")
+            ) {
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+</script>
+
+
 {% endblock %}

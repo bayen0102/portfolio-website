@@ -525,14 +525,762 @@ main {
 
 
 
+/* ==================================================
+   PROJECT SHOWCASE
+   ================================================== */
+
+.project-hero {
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 30px 80px;
+}
+
+.project-hero-content {
+    width: 100%;
+    max-width: 1000px;
+    text-align: left;
+}
+
+.project-eyebrow,
+.section-label {
+    color: #f6bed9;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.project-main-title {
+    font-size: clamp(4rem, 7vw, 8rem);
+    line-height: 1.02;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+
+    opacity: 0;
+    transform: translateY(35px);
+    animation: projectFadeUp 0.8s ease forwards;
+}
+
+.project-eyebrow {
+    opacity: 0;
+    animation: projectFadeUp 0.7s ease forwards;
+}
+
+.project-description {
+    max-width: 700px;
+    color: #aaa;
+    font-size: 1.7rem;
+    line-height: 1.7;
+    margin-bottom: 35px;
+
+    opacity: 0;
+    animation: projectFadeUp 0.8s ease 0.2s forwards;
+}
 
 
+/* ---------- BUTTONS ---------- */
+
+.project-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+
+    opacity: 0;
+    animation: projectFadeUp 0.8s ease 0.35s forwards;
+}
+
+.project-primary-btn,
+.project-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 22px;
+    border-radius: 8px;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border 0.3s ease;
+}
+
+.project-primary-btn {
+    background: white;
+    color: black;
+}
+
+.project-primary-btn:hover {
+    background: #f6bed9;
+    transform: translateY(-3px);
+}
+
+.project-secondary-btn {
+    color: white;
+    border: 1px solid #444;
+}
+
+.project-secondary-btn:hover {
+    border-color: #f6bed9;
+    transform: translateY(-3px);
+}
 
 
+/* ---------- TECHNOLOGY BADGES ---------- */
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    opacity: 0;
+    animation: projectFadeUp 0.8s ease 0.5s forwards;
+}
+
+.tech-stack span {
+    padding: 8px 14px;
+    border: 1px solid #333;
+    border-radius: 100px;
+
+    color: #bbb;
+    background: #0c0c0c;
+
+    font-size: 1.1rem;
+
+    transition:
+        border 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.tech-stack span:hover {
+    border-color: #f6bed9;
+    color: white;
+    transform: translateY(-3px);
+}
 
 
+/* ---------- GENERAL SECTIONS ---------- */
+
+.project-content-section {
+    width: calc(100% - 60px);
+    max-width: 1100px;
+
+    margin: 0 auto 130px;
+    padding-top: 40px;
+
+    text-align: left;
+}
+
+.project-content-section > h2 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    max-width: 700px;
+    color: #999;
+
+    font-size: 1.5rem;
+    line-height: 1.7;
+
+    margin-bottom: 50px;
+}
 
 
+/* ---------- ARCHITECTURE ---------- */
+
+.architecture {
+    margin-top: 50px;
+    padding: 50px;
+
+    border: 1px solid #262626;
+    border-radius: 18px;
+
+    background: #080808;
+}
+
+.architecture-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.architecture-node {
+    min-width: 190px;
+    padding: 25px;
+
+    border: 1px solid #333;
+    border-radius: 12px;
+
+    background: #111;
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        border 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.architecture-node:hover {
+    transform: translateY(-6px);
+    border-color: #f6bed9;
+    box-shadow: 0 10px 30px rgba(246, 190, 217, 0.08);
+}
+
+.architecture-node i {
+    display: block;
+    margin-bottom: 15px;
+
+    color: #f6bed9;
+    font-size: 2rem;
+}
+
+.architecture-node strong {
+    display: block;
+    margin-bottom: 7px;
+
+    font-size: 1.4rem;
+}
+
+.architecture-node span {
+    color: #888;
+    font-size: 1rem;
+}
+
+.connection {
+    width: 180px;
+    text-align: center;
+    color: #888;
+}
+
+.connection-line {
+    position: relative;
+
+    height: 2px;
+    margin-top: 10px;
+
+    overflow: hidden;
+    background: #333;
+}
+
+.connection-line::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -50%;
+
+    width: 50%;
+    height: 100%;
+
+    background: #f6bed9;
+
+    animation: dataFlow 2s linear infinite;
+}
+
+.architecture-arrow {
+    margin: 20px 0;
+
+    color: #f6bed9;
+    font-size: 2.5rem;
+    text-align: center;
+
+    animation: arrowPulse 1.5s ease-in-out infinite;
+}
+
+.server-node {
+    width: 300px;
+    margin: auto;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+/* ---------- FEATURES ---------- */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    position: relative;
+
+    min-height: 230px;
+    padding: 30px;
+
+    overflow: hidden;
+
+    background: #0b0b0b;
+    border: 1px solid #252525;
+    border-radius: 14px;
+
+    transition:
+        transform 0.3s ease,
+        border 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+    border-color: #f6bed9;
+}
+
+.feature-card > i {
+    margin-bottom: 25px;
+
+    color: #f6bed9;
+    font-size: 2rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.7rem;
+}
+
+.feature-card p {
+    max-width: 420px;
+
+    color: #999;
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+.feature-number {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+
+    color: #333;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+
+/* ---------- ENGINEERING DECISIONS ---------- */
+
+.decision-list {
+    border-top: 1px solid #292929;
+}
+
+.decision-item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 25px;
+
+    padding: 35px 10px;
+
+    border-bottom: 1px solid #292929;
+
+    transition: padding 0.3s ease;
+}
+
+.decision-item:hover {
+    padding-left: 20px;
+}
+
+.decision-item > span {
+    color: #f6bed9;
+    font-size: 1.2rem;
+}
+
+.decision-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.7rem;
+}
+
+.decision-item p {
+    max-width: 700px;
+
+    color: #999;
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+
+/* ---------- FINAL CTA ---------- */
+
+.project-final {
+    padding-bottom: 100px;
+}
+
+.project-final .project-primary-btn {
+    margin-top: 20px;
+}
+
+
+/* ---------- SCROLL REVEAL ---------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes projectFadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dataFlow {
+
+    from {
+        left: -50%;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes arrowPulse {
+
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(5px);
+    }
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    .project-hero {
+        min-height: auto;
+        padding: 160px 20px 100px;
+    }
+
+    .project-main-title {
+        font-size: 4rem;
+        letter-spacing: -1px;
+    }
+
+    .project-description {
+        font-size: 1.4rem;
+    }
+
+    .project-content-section {
+        width: calc(100% - 40px);
+        margin-bottom: 90px;
+    }
+
+    .project-content-section > h2 {
+        font-size: 3rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .architecture {
+        padding: 25px 15px;
+    }
+
+    .architecture-row {
+        flex-direction: column;
+    }
+
+    .connection {
+        width: 2px;
+        height: 80px;
+    }
+
+    .connection span {
+        display: none;
+    }
+
+    .connection-line {
+        width: 2px;
+        height: 100%;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .architecture-node,
+    .server-node {
+        width: 100%;
+    }
+
+    .decision-item {
+        grid-template-columns: 40px 1fr;
+    }
+}
+
+/* ==================================================
+   SYSTEM IN ACTION
+   ================================================== */
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.demo-card {
+    overflow: hidden;
+    background: #090909;
+    border: 1px solid #252525;
+    border-radius: 16px;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.demo-card:hover {
+    transform: translateY(-8px);
+    border-color: #f6bed9;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(246, 190, 217, 0.08);
+}
+
+
+/* Screenshot */
+
+.demo-image-wrapper {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #111;
+    cursor: zoom-in;
+}
+
+.demo-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.demo-card:hover .demo-image {
+    transform: scale(1.05);
+    filter: brightness(0.55);
+}
+
+
+/* Hover Overlay */
+
+.demo-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease;
+}
+
+.demo-card:hover .demo-overlay {
+    opacity: 1;
+}
+
+.demo-overlay span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid #555;
+    border-radius: 100px;
+
+    color: white;
+    font-size: 1.1rem;
+}
+
+
+/* Demo Information */
+
+.demo-info {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    gap: 15px;
+
+    padding: 25px;
+}
+
+.demo-number {
+    color: #f6bed9;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.demo-info h3 {
+    margin-bottom: 8px;
+    color: white;
+    font-size: 1.6rem;
+}
+
+.demo-info p {
+    color: #888;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   FULLSCREEN IMAGE MODAL
+   ================================================== */
+
+.image-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0.95);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.image-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-image {
+    max-width: 90vw;
+    max-height: 80vh;
+
+    object-fit: contain;
+
+    border: 1px solid #333;
+    border-radius: 10px;
+
+    transform: scale(0.94);
+
+    transition: transform 0.3s ease;
+}
+
+.image-modal.active .modal-image {
+    transform: scale(1);
+}
+
+.modal-caption {
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 1.2rem;
+}
+
+
+/* Close Button */
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+
+    width: 48px;
+    height: 48px;
+
+    background: transparent;
+
+    border: 1px solid #444;
+    border-radius: 50%;
+
+    color: white;
+    font-size: 2.5rem;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #f6bed9;
+    border-color: #f6bed9;
+
+    transform: rotate(90deg);
+}
+
+
+/* ==================================================
+   SYSTEM IN ACTION - MOBILE
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    .demo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-modal {
+        padding: 20px;
+    }
+
+    .modal-close {
+        top: 20px;
+        right: 20px;
+    }
+}
 
  
 
